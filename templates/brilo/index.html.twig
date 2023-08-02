@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;URL=http://localhost:8910/">
+    <title>BITCOIN</title>
+</head>
+<body>
+<h1>BITCOIN</h1>
+{% if rates %}
+    <ul>
+        {% for currency, rate in rates %}
+            {% if currency in allowRates %}
+                <li>{{ currency }}: {{ rate['rate_float'] }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>
